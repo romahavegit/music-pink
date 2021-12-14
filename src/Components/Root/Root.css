@@ -1,0 +1,18 @@
+:root , .default-constants{
+    --primary : #FA1F71;
+    --primary-dark : #DE1D65;
+    --secondary : #C8C8C8;
+    --secondary-dark : #B5B5B5;
+    --background-color : #011A21;
+}
+
+body{
+    width : 100vw;
+    height : 100vh;
+    background: var(--background-color);
+}
+
+p{
+    color : white;
+    font-family: Calibri;
+}
