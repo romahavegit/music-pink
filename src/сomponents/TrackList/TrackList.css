@@ -1,0 +1,7 @@
+.track_list{
+    padding : 0
+}
+
+.track_list > *{
+    margin-top: 5px;
+}

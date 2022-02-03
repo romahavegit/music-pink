@@ -1,0 +1,17 @@
+header{
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+}
+
+header > *:nth-child(1){
+    margin-left : 22px;
+}
+
+header > *:nth-child(2){
+    margin-left : 26px;
+}
+
+.app_name{
+    font-size: 48px;
+}

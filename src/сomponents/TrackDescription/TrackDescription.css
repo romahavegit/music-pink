@@ -1,0 +1,49 @@
+.track-description.have-playing-track{
+    --cover-size : 250px;
+    display: grid;
+    grid-template-columns: 1fr var(--cover-size);
+    grid-template-rows: 52px 30px 33px 135px 1fr;
+}
+.track-description.have-playing-track > *:nth-child(1){
+    margin : 0;
+    line-height: 28px;
+    height : 48px;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.track-description.have-playing-track > *:nth-child(2){
+    height : 25px;
+    margin : 0;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.track-description.have-playing-track > *:nth-child(5){
+    grid-row-start: 5;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.track-description.have-playing-track > *:nth-child(4){
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+
+.track-cover{
+    width: var(--cover-size);
+    height: var(--cover-size)
+}
+
+.name_of_describing_track{
+    font-size: 48px;
+}
+.author_of_describing_track{
+    font-size: 25px;
+}
+
+.duration_of_describing_track{
+    font-size: 28px;
+}
+.duration_of_describing_track{
+    font-size: 24px;
+}

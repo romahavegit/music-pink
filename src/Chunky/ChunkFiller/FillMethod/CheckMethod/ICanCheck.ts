@@ -1,0 +1,1 @@
+export type ICanCheck<Item> = (arg : unknown)=>arg is Item;

@@ -1,0 +1,48 @@
+:root , .default-constants{
+    --primary : #FA1F71;
+    --primary-dark : #DE1D65;
+    --secondary : #C8C8C8;
+    --secondary-dark : #B5B5B5;
+    --background-color : #011A21;
+    --brick-size : 76px;
+}
+body{
+    margin : 0;
+    padding : 0;
+}
+#root{
+    width : 100vw;
+    height : 100vh;
+    background: var(--background-color);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: var(--brick-size) 128px 1fr;
+}
+
+#root > *:nth-child(1){
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#root > *:nth-child(2){
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    overflow-y: scroll;
+}
+
+#root > *:nth-child(3){
+    grid-column-start: 7;
+    grid-column-end: 13;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+
+p, h1, h2, h3, h4, h5, h6, span, label{
+    color : white;
+    font-family: Calibri;
+}

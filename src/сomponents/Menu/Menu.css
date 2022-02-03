@@ -1,0 +1,44 @@
+.track_menu{
+    text-align: center;
+    padding-top: 35px;
+}
+
+.track_menu > *:nth-child(2){
+    margin-top : 35px;
+}
+
+.track_menu > *:nth-child(3){
+    margin-top: 0;
+}
+
+.my_songs_label{
+    font-size: 48px;
+}
+.track_upload_panel{
+    display: flex;
+    
+}
+.track_upload_panel > *{
+    margin-right: 5px;
+}
+.track_upload_panel :last-child{
+    margin-right: 0 !important;
+}
+
+.track_upload_button{
+    width : var(--brick-size);
+    height : var(--brick-size);
+    background: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.track_upload_label{
+    flex-grow: 1;
+    width : default;
+    background: var(--secondary-dark);
+}
+
+.track_upload_label_text{
+    font-size: 33px;
+}
