@@ -1,0 +1,1 @@
+export const checkBlob = (arg : unknown) : arg is Blob=>arg instanceof Blob;

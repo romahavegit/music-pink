@@ -1,4 +1,4 @@
-import { Get } from "Get/Get";
+import { IGet } from "Get/IGet";
 import { ICanReceiveChunks } from "../ICanReceiveChunks";
 
 export class ReceiveChunksFromWeb<Chunk> implements ICanReceiveChunks{
@@ -9,12 +9,13 @@ export class ReceiveChunksFromWeb<Chunk> implements ICanReceiveChunks{
             this.handleError(new Error("AAAAAAAAAAAA"))
         }
         this.isPutNeeded = true;
+        this.isSessionStarted = true;
         this.getOneInstance()
     }
     private getOneInstance(){
-        console.log("this", this)
-        if(this.needChunkId !== null){
-            this.get.getItem(this.needChunkId()).then((chunk)=>{
+        const nextId = this.needChunkId() 
+        if(nextId !== null){
+            this.get.getItem(nextId).then((chunk)=>{
                 if(this.isPutNeeded){
                     this.putChunks([chunk]).then(this.getOneInstance.bind(this))
                 }
@@ -24,5 +25,5 @@ export class ReceiveChunksFromWeb<Chunk> implements ICanReceiveChunks{
     endReceiveSession(): void {
         this.isPutNeeded = false;
     }
-    constructor(private handleError : (err : Error)=>void, private putChunks : (chunks : Chunk[])=>Promise<void>, private get : Get<Chunk>, private needChunkId : ()=>string){}
+    constructor(private handleError : (err : Error)=>void, private putChunks : (chunks : Chunk[])=>Promise<void>, private get : IGet<Chunk>, private needChunkId : ()=>string | null){}
 }

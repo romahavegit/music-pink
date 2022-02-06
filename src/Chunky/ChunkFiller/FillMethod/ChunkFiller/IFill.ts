@@ -1,4 +1,4 @@
-export interface IFillMethod{
+export interface IFill{
     startFill() : void;
     endFill() : void;
 }

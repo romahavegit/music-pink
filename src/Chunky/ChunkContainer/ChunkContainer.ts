@@ -29,7 +29,7 @@ export class ChunkContainer<ChunkT> implements IContainChunks<ChunkT>, IShowCont
             this.chunks = newArray;
         }
     }
-    constructor(private handleError : (err : Error)=>void, private chunkCount : number){
-        this.left = chunkCount;
+    constructor(private handleError : (err : Error)=>void, public length : number){
+        this.left = length;
     }
 }

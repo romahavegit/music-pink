@@ -6,6 +6,9 @@ import { IShowContainingChunks } from "./IShowContainingChunks";
 export class EventbleChunkContainer<Chunk> implements IHaveChunkEvents, IContainChunks<Chunk>{
     private eventController = new EventController();
     private isCompleteEmited : boolean = false;
+    get chunks(): Chunk[]{
+        return this.chunkContainer.chunks;
+    }
     addEventListener = this.eventController.addEventListener.bind(this.eventController);
     addChunk(chunk: Chunk): void {
         this.makeAddOp(()=>this.chunkContainer.addChunk(chunk));
@@ -13,6 +16,9 @@ export class EventbleChunkContainer<Chunk> implements IHaveChunkEvents, IContain
     addChunks(chunks: Chunk[]): void {
         this.makeAddOp(()=>this.chunkContainer.addChunks(chunks));
     }
+    get length(): number{
+        return this.chunkContainer.length;
+    } 
     private makeAddOp(f : ()=>void){
         const oldLeft = this.chunkContainer.left;
         f();

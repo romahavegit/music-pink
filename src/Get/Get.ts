@@ -1,6 +1,6 @@
 import { IGet } from "./IGet";
 
-type  Protocol = "http" | "https" | "ws" | "wss";
+export type Protocol = "http" | "https" | "ws" | "wss";
 export class Get<Item> implements IGet<Item>{
     private uriFromId(id : string){
         const uri = `${this.protocol}://${this.ip}:${this.port}/${this.endpointPath}/${this.itemName}/${id}`;
